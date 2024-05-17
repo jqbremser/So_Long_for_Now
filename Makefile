@@ -6,7 +6,7 @@
 #    By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 11:33:26 by jbremser          #+#    #+#              #
-#    Updated: 2024/05/17 14:00:19 by jbremser         ###   ########.fr        #
+#    Updated: 2024/05/17 17:02:31 by jbremser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,23 @@ FILES = 	so_long.c \
 			animations.c \
 			moves.c \
 			im_an_init.c 
+			
+BFILES = 	so_long_bonus.c \
+			map_init_bonus.c \
+			map_parse_bonus.c \
+			utils_bonus.c \
+			error_time_bonus.c \
+			fill_bonus.c \
+			mlx_bonus.c \
+			assets_bonus.c \
+			map_render_bonus.c \
+			animations_bonus.c \
+			moves_bonus.c \
+			im_an_init_bonus.c 	
 
 SRCDIR =	srcs
 OBJDIR =	objs
+BDIR =		bonus
 
 MLXDIR	=	./MLX42
 HEADERS	=	-I $(MLXDIR)/include
@@ -40,6 +54,9 @@ LIBFT =		$(LIBFT_DIR)/libft.a
 
 SRCS =		$(addprefix $(SRCDIR)/, $(FILES))
 OBJS =		$(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS)) libft/libft.a
+
+BSRCS =		$(addprefix $(BDIR)/, $(BFILES))
+BOBJS =		$(patsubst $(BDIR)/%.c, $(OBJDIR)/%.o, $(BSRCS)) libft/libft.a
 
 ANSI_CYAN := \033[0;36m
 ANSI_BLUE := \033[0;34m
@@ -73,9 +90,21 @@ clean:
 
 fclean:		clean
 			@rm -rf $(NAME)
+			@rm -f .bonus
 			@make -C $(LIBFT_DIR) fclean
 			@echo "$(ANSI_RED)Executable $(NAME) removed$(ANSI_RESET)"
 
 re:			fclean	all
 
-.PHONY:		all	clean fclean re mlx
+bonus:		.bonus
+
+.bonus:	libmlx $(BOBJS) $(LIBFT)
+			@$(CC) $(HEADERS) $(BOBJS) $(LIBFT) $(MLX) -o $(NAME)
+			@touch .bonus
+			@echo "$(ANSI_CYAN)Bonus Compilation Complete: $(NAME) $(ANSI_RESET)"
+
+$(OBJDIR)/%.o:	$(BDIR)/%.c $(SL_H)
+			@mkdir -p $(OBJDIR)
+			@cc  $(FLAGS) -o $@ -c $< $(HEADERS)
+
+.PHONY:		all	clean fclean re mlx bonus
