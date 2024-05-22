@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:58:52 by jbremser          #+#    #+#             */
-/*   Updated: 2024/05/22 14:09:57 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/05/22 15:14:45 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "./MLX42/include/MLX42/MLX42.h"
 # include <fcntl.h>
 
-# define PIXELS 128	
+# define PIXELS 64
 
 typedef struct s_position
 {
