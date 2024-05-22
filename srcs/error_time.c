@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:35:33 by jbremser          #+#    #+#             */
-/*   Updated: 2024/05/17 14:57:10 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/05/20 12:27:53 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ void	error_exit_array(char *msg, t_map	*game, char **array)
 	error_msg_exit(msg, game);
 }
 
+void	error_msg(char *msg)
+{
+	if (msg)
+		write(2, msg, ft_strlen(msg));
+}
+
 void	free_array(char **str)
 {
 	int	y;
@@ -33,12 +39,6 @@ void	free_array(char **str)
 	while (str[y])
 		free(str[y++]);
 	free(str);
-}
-
-void	error_msg(char *msg)
-{
-	if (msg)
-		write(2, msg, ft_strlen(msg));
 }
 
 void	free_animes(mlx_t *mlx, t_ani *ani)

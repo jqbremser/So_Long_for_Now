@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 12:02:05 by jbremser          #+#    #+#             */
-/*   Updated: 2024/05/17 14:56:15 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/05/20 11:49:54 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	animation_loop(void *param)
 
 	game = param;
 	game->emote_time += game->mlx->delta_time;
-	if (game ->emote_time > 0.166)
+	if (game->emote_time > 0.166)
 	{
 		game->cur_frame++;
 		animate(game, game->p_ani);

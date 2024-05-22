@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   im_an_init.c                                       :+:      :+:    :+:   */
+/*   im_an_init_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 13:50:12 by jbremser          #+#    #+#             */
-/*   Updated: 2024/05/17 15:09:33 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:54:33 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ t_img	*images_init(t_map	*game)
 	assets = (t_img *)ft_calloc(1, sizeof(t_img));
 	if (!assets)
 		return (NULL);
-	load_all_assets(game, &assets);
+	load_all_assets(game, assets);
 	if (!assets->wall || !assets->floor || !assets->exit_open
 		|| !assets->exit_closed)
 	{
-		ft_printf("Inside Images_init\n");
+		error_msg("Error: images_init\n");
 		free(assets);
 		return (NULL);
 	}

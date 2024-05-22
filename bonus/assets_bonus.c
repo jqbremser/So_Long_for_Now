@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assets.c                                           :+:      :+:    :+:   */
+/*   assets_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:52:54 by jbremser          #+#    #+#             */
-/*   Updated: 2024/05/17 14:56:55 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:20:47 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static void	load_asset(t_map *game, mlx_image_t **img, char *img_path)
 	mlx_resize_image(*img, PIXELS, PIXELS);
 }
 
-void	load_all_assets(t_map *game, t_img **assets)
+void	load_all_assets(t_map *game, t_img *assets)
 {
-	load_asset(game, &(*assets)->wall, "./assets/wall.png");
-	load_asset(game, &(*assets)->floor, "./assets/floor.png");
-	load_asset(game, &(*assets)->exit_open, "./assets/exit_open.png");
-	load_asset(game, &(*assets)->exit_closed, "./assets/exit_closed.png");
+	load_asset(game, &assets->wall, "./assets/wall.png");
+	load_asset(game, &assets->floor, "./assets/floor.png");
+	load_asset(game, &assets->exit_open, "./assets/exit_open.png");
+	load_asset(game, &assets->exit_closed, "./assets/exit_closed.png");
 }

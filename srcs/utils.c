@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:15:51 by jbremser          #+#    #+#             */
-/*   Updated: 2024/05/17 14:59:10 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:11:08 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ size_t	ft_strlen_delim(char *str, char delim)
 
 void	update_exit(t_map	*game, t_position e_pos)
 {
+	game->images->exit_closed->enabled = false;
 	if (mlx_image_to_window(game->mlx, game->images->exit_open,
 			e_pos.x * PIXELS, e_pos.y * PIXELS) < 0)
 		error_exit_array("Error: image: closed exit\n", game, game->map);
