@@ -6,13 +6,13 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:09:43 by jbremser          #+#    #+#             */
-/*   Updated: 2023/11/21 12:06:42 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:46:31 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c > 31 & c < 127)
+	if (c > 31 && c < 127)
 		return (1);
 	else
 		return (0);

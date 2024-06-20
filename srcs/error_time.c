@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:35:33 by jbremser          #+#    #+#             */
-/*   Updated: 2024/05/20 12:27:53 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:40:03 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,13 @@ void	error_exit_array(char *msg, t_map	*game, char **array)
 
 void	error_msg(char *msg)
 {
+	int len;
+
+	len = 0;
 	if (msg)
-		write(2, msg, ft_strlen(msg));
+		len = write(2, msg, ft_strlen(msg));
+	else
+		(void)len;
 }
 
 void	free_array(char **str)

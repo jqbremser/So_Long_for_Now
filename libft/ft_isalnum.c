@@ -6,15 +6,13 @@
 /*   By: jbremser <jbremser@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:07:02 by jbremser          #+#    #+#             */
-/*   Updated: 2023/11/20 12:24:42 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:45:45 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-	if ((c >= 65 & c <= 90) || (c >= 97 & c <= 122))
-		return (1);
-	else if (c >= 48 & c <= 57)
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
 		return (1);
 	else
 		return (0);

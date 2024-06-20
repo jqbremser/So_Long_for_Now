@@ -6,7 +6,7 @@
 /*   By: jbremser <jbremser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 15:36:35 by jbremser          #+#    #+#             */
-/*   Updated: 2024/02/13 11:14:48 by jbremser         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:51:17 by jbremser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,7 @@ int	cast_hex(unsigned long long n, unsigned int b, int x, int *check)
 	count = 0;
 	low = "0123456789abcdef";
 	up = "0123456789ABCDEF";
-	if (n < 0)
-	{
-		count += print_ch('-', check);
-		count += cast_hex(-(n), b, x, check);
-	}
-	else if (n > b - 1)
+	if (n > b - 1)
 	{
 		count += cast_hex(n / b, b, x, check);
 		count += cast_hex(n % b, b, x, check);
